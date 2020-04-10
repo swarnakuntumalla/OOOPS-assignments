@@ -1,0 +1,331 @@
+USING COMPLEX NUMBERS:
+
+Instantiation
+
+Input:
+[1,2]
+
+Output:
+1
+2
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+    complex_number = ComplexNumber(*input_args)
+
+    print(complex_number.real_part)
+    print(complex_number.imaginary_part)
+    
+    *-----------------------------------------*
+    
+Conjugate
+
+Input:
+[1,2]
+
+Output:
+1
+-2
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+        
+    def conjugate(self):
+        return ComplexNumber(self.real_part, -self.imaginary_part)
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+    complex_number = ComplexNumber(*input_args)
+    complex_number_conjugate = complex_number.conjugate()
+    
+    print(complex_number_conjugate.real_part)
+    print(complex_number_conjugate.imaginary_part)
+    
+    *------------------------------------------------------*
+    
+ Addition
+ 
+ Input:
+[[1,2],[3,4]]
+
+Output:
+4
+6
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+        
+    def __add__(self, complex_number2):
+        return ComplexNumber(self.real_part+complex_number2.real_part, self.imaginary_part+complex_number2.imaginary_part)
+        
+    # TODO: write your code here
+    pass
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number1 = ComplexNumber(*input_args[0])
+    complex_number2 = ComplexNumber(*input_args[1])
+    
+    complex_numbers_addition = complex_number1 + complex_number2
+
+    print(complex_numbers_addition.real_part)
+    print(complex_numbers_addition.imaginary_part)
+    
+    *----------------------------------------------------*
+    
+Subtraction
+
+Input:
+[[1,2],[3,4]]
+
+Output:
+-2
+-2
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+        
+    def __sub__(self, complex_number2):
+        return ComplexNumber(self.real_part-complex_number2.real_part, self.imaginary_part-complex_number2.imaginary_part)
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number1 = ComplexNumber(*input_args[0])
+    complex_number2 = ComplexNumber(*input_args[1])
+    
+    complex_numbers_subtraction = complex_number1 - complex_number2
+    
+    print(int(complex_numbers_subtraction.real_part))
+    print(int(complex_numbers_subtraction.imaginary_part))
+    
+    *-----------------------------------------------------*
+    
+Multiplication
+
+Input:
+[[1,2],[3,4]]
+
+Output:
+-5
+10
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+        
+    def __mul__(self, complex_number2):
+        return ComplexNumber(((self.real_part*complex_number2.real_part) - (self.imaginary_part*complex_number2.imaginary_part)), ((self.real_part*complex_number2.imaginary_part) + (self.imaginary_part*complex_number2.real_part)))
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number1 = ComplexNumber(*input_args[0])
+    complex_number2 = ComplexNumber(*input_args[1])
+    
+    complex_numbers_multiplication = complex_number1 * complex_number2
+
+    print(int(complex_numbers_multiplication.real_part))
+    print(int(complex_numbers_multiplication.imaginary_part))
+    
+   *----------------------------------------------------------*
+   
+ Division
+ 
+ Input:
+[[1,2],[3,4]]
+
+Output:
+0.44
+0.08
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+        
+    def __truediv__(self, complex_number2):
+        r = float(complex_number2.real_part**2 + complex_number2.imaginary_part**2)
+        return ComplexNumber(((self.real_part*complex_number2.real_part) + (self.imaginary_part*complex_number2.imaginary_part))/r, ((self.imaginary_part*complex_number2.real_part) - (self.real_part*complex_number2.imaginary_part))/r)
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number1 = ComplexNumber(*input_args[0])
+    complex_number2 = ComplexNumber(*input_args[1])
+    
+    complex_numbers_division = complex_number1 / complex_number2
+    
+
+    print(complex_numbers_division.real_part)
+    print(complex_numbers_division.imaginary_part)
+    
+    *------------------------------------------------*
+    
+ Absolute
+ 
+ Input:
+[1,2]
+
+Output:
+2.236
+
+
+---------------------------------------------------
+
+#code
+
+import math
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+    
+    def __abs__(self):
+        return round(math.sqrt(self.real_part**2 + self.imaginary_part**2),3)
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number = ComplexNumber(*input_args)
+    absolute_value = abs(complex_number)
+    print(absolute_value)
+    
+    *-----------------------------------------*
+    
+Equality
+
+Input:
+[[1,2],[1,2]]
+
+Output:
+True
+
+
+---------------------------------------------------
+
+#code
+
+import math
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+    
+    def __abs__(self):
+        return round(math.sqrt(self.real_part**2 + self.imaginary_part**2),3)
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number = ComplexNumber(*input_args)
+    absolute_value = abs(complex_number)
+    print(absolute_value)
+    
+    *--------------------------------------*
+    
+Print
+
+Input:
+[1,2]
+
+Output:
+1+2i
+
+
+---------------------------------------------------
+
+#code
+
+class ComplexNumber:
+    def __init__(self, real_number = 0, imaginary_number = 0):
+        self.real_part = real_number
+        self.imaginary_part = imaginary_number
+    def __str__(self):
+        return f'{self.real_part}{self.imaginary_part:+}i'
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    input_args = list(json.loads(input()))
+
+    complex_number = ComplexNumber(*input_args)
+   
+    complex_number_str_value = str(complex_number)
+
+    print(complex_number_str_value)

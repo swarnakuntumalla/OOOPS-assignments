@@ -1,0 +1,466 @@
+Car !
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+Red-250.0-10.0-3.0
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.acceleration
+10
+>>> car.tyre_friction
+3
+>>> car.max_speed
+250
+>>> car.color
+Red
+"""
+
+
+class Car:
+    def __init__(self,color,max_speed,acceleration,tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration, tyre_friction=tyre_friction)
+    #print(car.color)
+    
+     print("-".join([car.color, str(car.max_speed), str(car.acceleration),
+                    str(car.tyre_friction)]))
+    
+    *---------------------------------------*
+    
+Car 2
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+False-True
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.start_engine()
+>>> car.is_engine_started
+True
+>>> car.stop_engine()
+>>> car.is_engine_started
+False
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.is_engine_started = False
+    
+    def start_engine(self):
+        self.is_engine_started = True
+        return self.is_engine_started
+    
+    def stop_engine(self):
+        self.is_engine_started = False
+        return self.is_engine_started
+        
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    is_engine_started_1 = car.is_engine_started
+    car.start_engine()
+    is_engine_started_2 = car.is_engine_started
+
+    print("-".join([str(is_engine_started_1), str(is_engine_started_2)]))
+    
+    *----------------------------------------------*
+    
+Car 3
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+0
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.current_speed
+0
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.current_speed = 0
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    print(car.current_speed)
+    
+    *-------------------------------------------------------*
+    
+Car 4
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+0
+0
+10.0
+20.0
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.accelerate()
+>>> car.current_speed
+0
+>>> car.start_engine()
+>>> car.accelerate()
+>>> car.current_speed
+10
+>>> car.accelerate()
+>>> car.current_speed
+20
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.current_speed = 0
+        self.is_engine_started = False
+        
+    def start_engine(self):
+        self.is_engine_started = True
+    
+    def stop_engine(self):
+        self.is_engine_started = False
+        
+    def accelerate(self):
+        if self.is_engine_started == True:
+            self.current_speed += self.acceleration
+            return self.current_speed
+        else:
+            return self.current_speed
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    car.accelerate()
+    print(car.current_speed)
+    car.start_engine()
+    print(car.current_speed)
+    car.accelerate()
+
+    print(car.current_speed)
+    car.accelerate()
+    print(car.current_speed)
+    
+    *----------------------------------------*
+    
+Car 5
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+10.0
+7.0
+4.0
+1.0
+0
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.start_engine()
+>>> car.accelerate()
+>>> car.current_speed
+10
+>>> car.apply_brakes()
+>>> car.current_speed
+7
+>>> car.apply_brakes()
+>>> car.current_speed
+4
+>>> car.apply_brakes()
+>>> car.current_speed
+1
+>>> car.apply_brakes()
+>>> car.current_speed
+0
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.current_speed = 0
+        self.is_engine_started = False
+        
+    def start_engine(self):
+        self.is_engine_started = True
+    
+    def stop_engine(self):
+        self.is_engine_started = False
+        
+    def accelerate(self):
+        if self.is_engine_started == True:
+            self.current_speed += self.acceleration
+            
+    def apply_brakes(self):
+        if self.current_speed >= self.tyre_friction: 
+            self.current_speed -= self.tyre_friction
+        else:
+            self.current_speed = 0
+
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    car.start_engine()
+    car.accelerate()
+
+    print(car.current_speed)
+    car.apply_brakes()
+    print(car.current_speed)
+    car.apply_brakes()
+    print(car.current_speed)
+    car.apply_brakes()
+    print(car.current_speed)
+    car.apply_brakes()
+    print(car.current_speed)
+    
+    *-----------------------------------------*
+    
+Car 6
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+Car not started yet
+Beep Beep
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.sound_horn()
+"Car not started yet"
+>>> car.start_engine()
+>>> car.sound_horn()
+"Beep Beep"
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.current_speed = 0
+        self.is_engine_started = False
+        
+    def start_engine(self):
+        self.is_engine_started = True
+    
+    def stop_engine(self):
+        self.is_engine_started = False
+        
+    def sound_horn(self):
+        if self.is_engine_started == True:
+            print("Beep Beep")
+        else:
+            print("Car not started yet")
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    car.sound_horn()
+    car.start_engine()
+    car.sound_horn()
+    
+    *--------------------------------------------*
+    
+Car 7
+
+Input:
+{"color": "Red", "max_speed": 250, "acceleration": 10, "tyre_friction": 3}
+
+Output:
+True
+False
+
+
+---------------------------------------------------
+
+#code
+
+"""
+>>> car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+>>> car.start_engine()
+>>> car.is_engine_started
+True
+>>> car.stop_engine()
+>>> car.is_engine_started
+False
+"""
+
+
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color = color
+        self.max_speed = max_speed
+        self.acceleration = acceleration
+        self.tyre_friction = tyre_friction
+        self.current_speed = 0
+        self.is_engine_started = False
+        
+    def start_engine(self):
+        self.is_engine_started = True
+    
+    def stop_engine(self):
+        self.is_engine_started = False
+    # TODO: write your code here
+    pass
+
+
+if __name__ == "__main__":
+    import json
+    detail = json.loads(input())
+
+    color = detail["color"]
+    max_speed = float(detail["max_speed"])
+    acceleration = float(detail["acceleration"])
+    tyre_friction = float(detail["tyre_friction"])
+
+    car = Car(color=color, max_speed=max_speed, acceleration=acceleration,
+              tyre_friction=tyre_friction)
+
+    car.start_engine()
+    print(str(car.is_engine_started))
+    car.stop_engine()
+    print(str(car.is_engine_started))
+    
+    *---------------------------------------------------*
+   

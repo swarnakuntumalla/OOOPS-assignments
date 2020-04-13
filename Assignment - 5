@@ -73,6 +73,8 @@ if __name__ == "__main__":
     print(fraction.denominator)
     
     
+*----------------------------------------------------*
+    
     
     
 Task 2: print Numerator and Denominator in form of num/dem
@@ -148,6 +150,9 @@ if __name__ == "__main__":
 
     print(isinstance(fraction_one, Fraction))
     print(fraction_one)
+    
+    
+*-----------------------------------------------*
     
    
    Task 3: Fractons addition 
@@ -256,6 +261,9 @@ if __name__ == "__main__":
     print(result_fraction.denominator)
     
     
+*---------------------------------------------------*
+
+    
  Task 4: Fractions subtraction
  
  Input:
@@ -355,6 +363,10 @@ if __name__ == "__main__":
     print(result_fraction.denominator)
     
     
+    
+*-----------------------------------------------------*
+    
+    
    Task 5: Fractions multiplication
    
    Input:
@@ -444,6 +456,10 @@ if __name__ == "__main__":
     print(isinstance(fraction_two, Fraction))
     print(result_fraction.numerator)
     print(result_fraction.denominator)
+    
+    
+*---------------------------------------------------*
+    
     
     Task 6: Fractions division
     
@@ -537,7 +553,10 @@ if __name__ == "__main__":
     print(isinstance(fraction_two, Fraction))
     print(result_fraction.numerator)
     print(result_fraction.denominator)
-    
+
+
+*--------------------------------------------------*
+
     Task 7: Decimal values of a fraction object
     
     Input:

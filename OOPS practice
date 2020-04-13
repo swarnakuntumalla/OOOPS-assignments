@@ -1,0 +1,116 @@
+class person:
+    def __init__(self,full_name,email):
+        self.name = full_name
+        self.email = email
+        #print("Hello i'm {}".format(name))
+    def greet(self, name='person'):
+        return "Hello {}".format(name)
+    def say_hello(self):
+        print('Hello')
+        print(self)
+    def __str__(self):
+        return self.name
+    pass
+
+class another_person(person):
+    def __init__(self,full_name,email,mobile_no):
+        super().__init__(full_name,email)
+        self.mobile_no = mobile_no
+    
+class Func(another_person):
+    pass
+    '''def __init__(self,color,acceleration):
+        self.color = color
+        self.acceleration = acceleration
+        self.speed = 0
+    def accelerate(self):
+        print('speeding up|||')
+        self.speed += self.acceleration
+    def apply_brakes(self):
+        print('Applying brakes')
+        self.speed -= 10'''
+        
+class User:
+    def __init__(self, name, mobile, address=''):
+        self.name = name
+        self.mobile = mobile
+        self.address = address
+        
+class BankAccount:
+    def __init__(self, user_details):
+        self.account_holder = user_details
+        self.generate_account_no()
+        self.balance = 0
+    def generate_account_no(self):
+        import uuid
+        self.account_no = str(uuid.uuid4())
+    def deposit(self,amount):
+        self.balance += amount
+    def with_draw(self,amount):
+        if amount > self.balance:
+            print("Insufficient Funds!")
+        else:
+            self.balance -= amount
+            
+#Encapsulation
+class Payment:
+    def __init__(self, price):
+        self.__final_price = price + price*0.05
+        
+    def get_final_price(self):
+        return self.__final_price
+        
+    def set_final_price(self, discount):
+        self.__final_price = self.__final_price - self.__calculate_discount(discount)
+        return self.__final_price
+        
+    def __calculate_discount(self, discount):
+        return self.__final_price * (discount/100)
+        
+#Multiple inheritance:      
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Dancer:
+    def __init__(self, style):
+        self.style = style
+
+class Student(Human, Dancer):
+    def __init__(self, name, age, style):
+        Human.__init__(self, name, age)
+        Dancer.__init__(self, style)
+        
+# def __str__(self):
+    # return self.colorij8uh7gy6ftg
+
+
+
+from person_class import person, another_person, Payment, Human, Dancer, Student
+
+person_details = Student('suneetha',20,'hiphop')
+print(person_details.style)
+print(person_details.name)
+print(person_details.age)
+#x = person('suneetha', 'suneethaece403@gmail.com')
+#print(x)
+#bank = Payment(10)
+#print(bank)
+#print(bank.__final_price)
+#print(bank.get_final_price())
+#print(bank.set_final_price(10))
+#print(help(Car))
+#p1 = another_person('suneetha', 'suneethaece403@gmail.com', 9999999999)
+#print(p1.mobile_no)
+#print(isinstance(p1, another_person))
+#print(issubclass(another_person, person))
+'''u = User('teja', 9999999999, "kurnool")
+b = BankAccount(u)
+print(b.account_holder.name, b.account_holder.mobile, b.account_no, b.account_holder.address)'''
+
+
+
+
+
+

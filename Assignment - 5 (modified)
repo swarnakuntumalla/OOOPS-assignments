@@ -225,9 +225,7 @@ class Fraction(object):
         dem = lcm
         num = (lcm//self.denominator)*self.numerator + (lcm//other.denominator)*other.numerator
         result = Fraction(num, dem)
-        print(self, end = " + ")
-        print(other, end = " = ")
-        print(result)
+        print(f'{self} + {other} = {result}')
         #print(f'{self._numerator}/{self._denominator} + {other._numerator}/{other._denominator} = {result._numerator}/{result._denominator}')
         return result
         
@@ -334,9 +332,7 @@ class Fraction(object):
         dem = lcm
         num = (lcm//self.denominator)*self.numerator - (lcm//other.denominator)*other.numerator
         result = Fraction(num, dem)
-        print(self, end = " - ")
-        print(other, end = " = ")
-        print(result)
+        print(f'{self} - {other} = {result}')
         #print(f'{self._numerator}/{self._denominator} - {other._numerator}/{other._denominator} = {result._numerator}/{result._denominator}')
         return result
         
@@ -434,9 +430,7 @@ class Fraction(object):
         dem = self.denominator * other.denominator
         num = self.numerator * other.numerator
         result = Fraction(num, dem)
-        print(self, end = " * ")
-        print(other, end = " = ")
-        print(result)
+        print(f'{self} * {other} = {result}')
         #print(f'{self.numerator}/{self.denominator} * {other.numerator}/{other.denominator} = {result.numerator}/{result.denominator}')
         return result
         
@@ -534,9 +528,7 @@ class Fraction(object):
         num = self.numerator * other.denominator
         dem = self.denominator * other.numerator
         result = Fraction(num, dem)
-        print(self, end = " / ")
-        print(other, end = " = ")
-        print(result)
+        print(f'{self} / {other} = {result}')
         #print(f'{self._numerator}/{self._denominator} / {other._numerator}/{other._denominator} = {result._numerator}/{result._denominator}')
         return result
         

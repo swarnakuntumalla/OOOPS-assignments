@@ -89,40 +89,6 @@ class Store:
             
         elif query.operation == "STARTS_WITH":
             for i in self.items_in_store:
-                if (query.field == "name" and i.name.startswith(query.value)) or (query.field == "category" and i.category.startswith(query.value)):
-                    filtered_items.add_item(i)
-            return filtered_items
-            
-        elif query.operation == "ENDS_WITH":
-            for i in self.items_in_store:
-                if (query.field == "name" and i.name.endswith(query.value)) or (query.field == "category" and i.category.endswith(query.value)):
-                    filtered_items.add_item(i)
-            return filtered_items
-            
-        elif query.operation == "CONTAINS":
-            for i in self.items_in_store:
-                if query.field == "name" and (query.value in i.name):
-                    filtered_items.add_item(i)
-                    
-                if query.field == "category" and (query.value in i.category):
-                    filtered_items.add_item(i)
-            return filtered_items
-            
-        elif query.operation == "IN":
-            for i in self.items_in_store:
-                if query.field == "name" and (i.name in query.value):
-                    filtered_items.add_item(i)
-                    
-                if query.field == "category" and (i.category in query.value):
-                    filtered_items.add_item(i)
-                    
-                if query.field == "price" and (i.price in query.value):
-                    filtered_items.add_item(i)
-            return filtered_items
-
-
-    def exclude(self, query):
-        filtered_items = Store()
 class Item:
     def __init__(self, name, price, category):
         if price <= 0:

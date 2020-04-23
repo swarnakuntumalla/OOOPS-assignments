@@ -118,3 +118,103 @@ class Zoo:
             animal.grow()
         else:
             self._reserved_food_in_kgs = 0
+            
+            
+            
+ Zoo Assignment(ELP):
+
+Create zoo.py file
+
+Total Classes : 6
+
+class Animal:
+    Attributes:
+        Instance Attributes:
+             If invalid data is given Raise ValueError:
+
+             1. age_in_months - public - protected - provide safe access
+             2. required_food_in_kgs - public - protected - provide safe access
+             3. breed - public - protected - provide safe access
+
+        class Attributes:
+             1. increased_food_in_kgs - public         
+
+   class methods:
+        1. make_sound - public
+    instance methods:
+	  3. grow - public
+class HuntingAnimal: 
+      class method:
+          1. hunt - public
+
+class LandAnimals:
+      class method:
+          1. breathe - public
+
+class WaterAnimals:
+      class method:
+          1. breathe - public
+
+class Deer:
+    Inherit attributes and methods from Animal class and LandAnimals
+    
+    class Attributes:
+        1. make_sound - public - override
+        2. Increase_food_in_kgs - public - override
+
+class Lion:
+     Inherit attributes and methods from Animal class , HuntingAnimal and LandAnimals
+
+      class Attributes:
+        1. make_sound - public - override
+        2. Increase_food_in_kgs - public - override
+        3. hunt_type - public - override
+        4. hunt_value - public - override
+
+class Shark:
+    Inherit attributes and methods from Animal class , HuntingAnimal and WaterAnimals
+
+      class Attributes:
+        1. make_sound - public - override
+        2. Increase_food_in_kgs - public - override
+        3. hunt_type - public - override
+        4. hunt_value - public - override
+
+class GoldFish:
+    Inherit attributes and methods from Animal class and WaterAnimals
+       
+      class Attributes:
+        1. make_sound - public - override
+        2. Increase_food_in_kgs - public - override
+
+class Snake:
+    Inherit attributes and methods from Animal class and HuntingAnimal and LandAnimals
+
+          class Attributes:
+        1. make_sound - public - override
+        2. Increase_food_in_kgs - public - override
+        3. hunt_type - public - override
+        4. hunt_value - public - override
+
+class Zoo:
+   Attributes:
+       Instance Attributes:
+           1. reserved_food_in_kgs - public - protected - provide safe access
+           2. no_of_animals - public - protected - provide safe access
+       Class Attributes:
+           1. animals_in_zoo - public - protected
+
+   class methods:
+        1. count_animals_in_all_zoos - public
+
+   instance methods:
+	  1. add_food_to_reserve - public
+        2. count_animals - public
+        3. add_animal - public
+        4.. feed - public
+
+   static methods:
+	  1. count_animals_in_given_zoos - public
+
+
+
